@@ -1,0 +1,25 @@
+spring:
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/boke?characterEncoding=utf-8&autoReconnect=true&useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    database: 0
+    host: 47.93.24.230
+    port: 6379
+    password: 520100
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.springsercurity2.entity
+server:
+  port: 8081
+#  servlet:
+#    context-path: /lailai

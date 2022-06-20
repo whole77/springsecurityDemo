@@ -1,0 +1,24 @@
+
+spring:
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+#    关闭缓存
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/mytest?characterEncoding=utf-8&autoReconnect=true&useSSL=false&useUnicode=true&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis:
+  #mapper映射文件路径
+  mapper-locations: classpath:mapper/*.xml
+  #定义别名所在包
+  type-aliases-package: com.springboot.entity
+
+server:
+  port: 8081
+  servlet:
+    context-path: /lailai

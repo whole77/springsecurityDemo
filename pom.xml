@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>springsecuritydemo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>springsecuritydemo</name>
+    <packaging>pom</packaging>
+    <description>springsecurity学习案例</description>
+    <properties>
+        <java.version>1.8</java.version>
+        <springboot.project.version>2.5.6</springboot.project.version>
+        <mysql-connnet-jdbc.version>8.0.16</mysql-connnet-jdbc.version>
+        <mybatis-spring-boot-starter.version>2.0.0</mybatis-spring-boot-starter.version>
+        <thymeleaf-extras-springsecurity5.version>3.0.4.RELEASE</thymeleaf-extras-springsecurity5.version>
+        <druid-veriosn>1.2.7</druid-veriosn>
+        <lombok-version>1.18.24</lombok-version>
+        <commons-lang3-version>3.9</commons-lang3-version>
+        <kaptcha-verison>2.3.2</kaptcha-verison>
+        <redis-version>2.3.10.RELEASE</redis-version>
+    </properties>
+    <modules>
+<!-- javaweb程序集成springsecurity入门案例-->
+        <module>
+            springsercurity_login
+        </module>
+        <module>
+            springsercurity_login_db
+        </module>
+    </modules>
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${redis-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+            <version>${kaptcha-verison}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid-veriosn}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${springboot.project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok-version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${springboot.project.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Spring Boot Spring Security 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${springboot.project.version}</version>
+        </dependency>
+
+        <!-- spring-boot实现热部署 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${springboot.project.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Spring Boot Thymeleaf 依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>${springboot.project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+            <version>${thymeleaf-extras-springsecurity5.version}</version>
+        </dependency>
+        <!-- Spring Boot Mybatis 依赖 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-spring-boot-starter.version}</version>
+        </dependency>
+
+        <!-- MySQL 连接驱动依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connnet-jdbc.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+
+    </dependencies>
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
